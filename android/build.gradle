@@ -1,4 +1,19 @@
+buildscript {
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+        jcenter()
+        mavenCentral()
+        maven {
+            url  "https://adcolony.bintray.com/AdColony"
+        }
+    }
 
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.5.0'
+    }
+}
 
 apply plugin: 'com.android.library'
 
@@ -28,7 +43,10 @@ repositories {
     jcenter() 
     mavenCentral()
     maven {
-      url  "https://adcolony.bintray.com/AdColony"      
+      url  "https://adcolony.bintray.com/AdColony"
+    }
+    maven {
+      url "https://maven.google.com"
     }
 }
 
@@ -44,7 +62,12 @@ dependencies {
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile 'com.facebook.react:react-native:+'
     compile 'com.squareup.picasso:picasso:2.5.2' //for Inmobi
-    compile 'com.google.android.gms:play-services-ads:15.0.0'
-    compile 'com.google.android.gms:play-services-location:15.0.0'
-    compile 'com.google.android.gms:play-services-gcm:15.0.0'
+    compile(name: 'adcolony-sdk-3.3.0', ext: 'aar')
+    compile(name: 'mobvista-8.11.0-alphab', ext: 'aar')
+    compile(name: 'mobvista-8.11.0-common', ext: 'aar')
+    compile(name: 'mobvista-8.11.0-interstitial', ext: 'aar')
+    compile(name: 'mobvista-8.11.0-interstitialvideo', ext: 'aar')
+    compile 'com.google.android.gms:play-services-ads:15.0.1'
+    compile 'com.google.android.gms:play-services-location:15.0.1'
+    compile 'com.google.android.gms:play-services-gcm:15.0.1'
 }
