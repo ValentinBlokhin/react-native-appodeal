@@ -103,7 +103,7 @@ module.exports = {
   removeEventListener,
   removeAllListeners,
   showToast: (message) => RNAppodeal.showToast(message),
-  initialize: (appKey, adTypes) => RNAppodeal.initialize(appKey, adTypes),
+  initialize: (appKey, adTypes, consentValue) => RNAppodeal.initialize(appKey, adTypes, consentValue),
   show: (adTypes, placement, cb = () => {}) => RNAppodeal.show(adTypes, placement, cb),
   isLoaded: (adTypes, cb = () => {}) => RNAppodeal.isLoaded(adTypes, cb),
   cache: (adTypes) => RNAppodeal.cache(adTypes),
